@@ -1,6 +1,6 @@
 # mixsoda-test
  
-[MixSoda](https://yrm006.github.io/2022.06.11/)と接続するテスト用サーバープログラム
+[MixSoda](https://mixsoda.shizentai.jp/)と接続するテスト用サーバープログラム
 
 ## 環境準備
 
@@ -10,14 +10,21 @@
 
 ## 疎通確認用 simple
 
-```
+```sh
 deno run -A https://ichigojam.github.io/mixsoda-test/simple.js
 ```
 - IchigoJam で、IOT.OUT1、IOT.IN() してみる
 
+## データ送信
+
+```sh
+deno run -A https://ichigojam.github.io/mixsoda-test/send_cli.js [value] [token] (iccid)
+```
+MixSodaに4byte整数を送る（iccid省略で全MixSodaに送信）
+
 ## WBGTの値を返すサンプル wbgtserver
 
-```
+```sh
 deno run -A https://ichigojam.github.io/mixsoda-test/wbgtserver.js
 ```
 - IchigoJam で、IOT.IN() で福井市の観測したWBGT実況値が反る

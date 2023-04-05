@@ -14,8 +14,8 @@ serve(async (req) => {
     if (req.method == "POST") {
       const b = new Uint8Array(await req.arrayBuffer());
       console.log(b);
-    } else if (req.method == "GET") {
-      const n = 1234;
+    } else if (req.method == "GET") { // boxになければ問い合わせがある
+      const n = 0;
       const res = new Uint8Array([0, 0, n >> 8, n]);
       //const res = new TextEncoder().encode("IchigoJam"); // 先頭4byteのみ受信可能
       return new Response(res);
